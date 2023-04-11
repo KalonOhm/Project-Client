@@ -1,8 +1,12 @@
-<div class="container">
+
   <app-nav></app-nav>
-  <app-searchbar class="col-3"></app-searchbar>
+  <app-searchbar></app-searchbar>
   <div class="row">
-    <app-sidebar class="col-3"></app-sidebar>
-    <router-outlet class="col-3"></router-outlet>
+    <div class="col-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+

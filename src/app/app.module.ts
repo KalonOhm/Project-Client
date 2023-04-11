@@ -11,6 +11,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './shared/searchbar/searchbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { GroupsComponent } from './collections/groups/groups.component';
+import { SubgroupsComponent } from './collections/groups/subgroups/subgroups.component';
+import { MinisComponent } from './collections/groups/subgroups/minis/minis.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     LoginComponent,
     HomeComponent,
     SearchbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    CollectionsComponent,
+    GroupsComponent,
+    SubgroupsComponent,
+    MinisComponent
   ],
   imports: [
     BrowserModule,

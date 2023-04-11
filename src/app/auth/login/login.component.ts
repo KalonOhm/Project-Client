@@ -7,32 +7,35 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     email: new FormControl(''),
-    password: new FormControl('')
-  })
-    constructor(private authService:AuthService, private userService:UserService, private route:Router) { }
+    password: new FormControl(''),
+  });
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+    private route: Router
+  ) {}
 
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {}
 
-    onSubmit() {
-      console.log(this.loginForm.value);
-      const loginUser = this.loginForm.value;
-// @ts-ignore
-      this.authService.login(loginUser).subscribe((res:any) => {
+  onSubmit() {
+    console.log(this.loginForm.value);
+    const loginUser = this.loginForm.value;
+
+    this.authService.login(loginUser).subscribe({
+      next: (res: any) => {
         console.log(res);
         if (res.success) {
           this.userService.setCurrentUser(res.payload.user);
           this.route.navigate(['/home']);
-          this.authService.setToken(res.payload.token)
-          console.log(res)
+          this.authService.setToken(res.payload.token);
+          console.log(res);
         }
-
-      })
-    }
-
+      },
+    });
+  }
 }
