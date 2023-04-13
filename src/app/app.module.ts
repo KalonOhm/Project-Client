@@ -9,12 +9,9 @@ import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { SearchbarComponent } from './shared/searchbar/searchbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { CollectionsComponent } from './collections/collections.component';
-import { GroupsComponent } from './collections/groups/groups.component';
-import { SubgroupsComponent } from './collections/groups/subgroups/subgroups.component';
-import { MinisComponent } from './collections/groups/subgroups/minis/minis.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +20,9 @@ import { MinisComponent } from './collections/groups/subgroups/minis/minis.compo
     NavComponent,
     LoginComponent,
     HomeComponent,
-    SearchbarComponent,
     SidebarComponent,
-    CollectionsComponent,
-    GroupsComponent,
-    SubgroupsComponent,
-    MinisComponent
+    ProfileComponent,
+    CollectionDetailComponent
   ],
   imports: [
     BrowserModule,

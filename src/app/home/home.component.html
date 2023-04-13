@@ -1,11 +1,22 @@
-<h1>Add a new Collection!</h1>
-<div>
-  User.collections.map(collection)[0-2]
+
+
+
+<main *ngIf="previewCollections">
+  <h1>Add a new Collection!</h1>
+  <h3>Collections</h3>
   <div>
-    Collection
-    Collection.groups.map(group)[0-4]
-    <div>
-      Group
+    <div *ngFor="let collection of previewCollections" class="card">
+      <a routerLink="/collections/{{ previewCollections[0].id }}" routerLinkActive="router-link-active"  class="p-2 link-secondary" >
+        {{ collection.collection_name }}
+      </a>
+      <div class="nav" >
+      <!-- <div *ngFor="let group of collection.groups">
+        {{ group.group_name }} -->
+        <span style="margin: 10px;"> Group A </span>
+        <span style="margin: 10px;"> Group B </span>
+        <span style="margin: 10px;"> Group C </span>
+      </div>
     </div>
   </div>
-</div>
+
+</main>
