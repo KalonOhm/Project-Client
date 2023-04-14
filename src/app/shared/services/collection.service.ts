@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 const URL = "http://localhost:3000/api/v1/users";
@@ -9,13 +10,35 @@ const URL = "http://localhost:3000/api/v1/users";
 })
 export class CollectionService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    ) { }
 
   fetchCollections() {
     return this.http.get(`${URL}/collections/home`);
   }
 
-  fetchCollection(id) {
-    return this.http.get(`${URL}/collections/${id}`);
+  fetchAllCollections() {
+    const token = this.authService.getToken();
+    return this.http.get(`${URL}/collections`, {
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
   }
+
+  fetchCollection(id) {
+    const token = this.authService.getToken();
+    return this.http.get(`${URL}/collections/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
+  }
+
+
+
+
+
 }

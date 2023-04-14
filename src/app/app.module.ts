@@ -12,6 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { GroupsComponent } from './groups/groups.component';
+import { GroupDetailsComponent } from './group-details/group-details.component';
+import { SubgroupsComponent } from './subgroups/subgroups.component';
+import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
+import { MinisComponent } from './minis/minis.component';
+import { MiniDetailsComponent } from './mini-details/mini-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { CollectionDetailComponent } from './collection-detail/collection-detail
     HomeComponent,
     SidebarComponent,
     ProfileComponent,
-    CollectionDetailComponent
+    CollectionDetailComponent,
+    CollectionsComponent,
+    GroupsComponent,
+    GroupDetailsComponent,
+    SubgroupsComponent,
+    SubgroupDetailsComponent,
+    MinisComponent,
+    MiniDetailsComponent
   ],
   imports: [
     BrowserModule,

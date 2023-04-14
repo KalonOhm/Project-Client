@@ -10,13 +10,11 @@ import { CollectionService } from '../shared/services/collection.service';
 export class CollectionDetailComponent implements OnInit {
 
   collection: any = null;
-  createrID: any = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private collectionService: CollectionService
   ) {}
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
       next: (params) => {
@@ -24,7 +22,6 @@ export class CollectionDetailComponent implements OnInit {
         this.collectionService.fetchCollection(collectionId).subscribe({
           next: (res: any) => {
             this.collection = res.payload.collection;
-            this.createrID = res.payload.createrID;
           },
         });
       },

@@ -5,6 +5,13 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { GroupsComponent } from './groups/groups.component';
+import { GroupDetailsComponent } from './group-details/group-details.component';
+import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
+import { SubgroupsComponent } from './subgroups/subgroups.component';
+import { MiniDetailsComponent } from './mini-details/mini-details.component';
+import { MinisComponent } from './minis/minis.component';
 
 const routes: Routes = [
   {
@@ -20,13 +27,41 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'profile/:id',
-    component: ProfileComponent
+    path: 'collections',
+    component: CollectionsComponent
   },
   {
     path: 'collections/:id',
     component: CollectionDetailComponent
-  }
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent
+  },
+  {
+    path: 'groups',
+    component: GroupsComponent
+  },
+  {
+    path: 'groups/:id',
+    component: GroupDetailsComponent
+  },
+  {
+    path: 'subgroups',
+    component: SubgroupsComponent
+  },
+  {
+    path: 'subgroups/:id',
+    component: SubgroupDetailsComponent
+  },
+  {
+    path: 'minis',
+    component: MinisComponent
+  },
+  {
+    path: 'minis/id',
+    component: MiniDetailsComponent
+  },
 ];
 
 @NgModule({

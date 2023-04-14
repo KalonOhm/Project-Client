@@ -1,5 +1,5 @@
 
-<main *ngIf="profileCollection">
+<main *ngIf="allCollections">
   <h1>Collections</h1>
   <div>
     <h2>Add a new Collection!</h2>
@@ -8,8 +8,8 @@
   </button>
   </div>
   <div>
-    <div *ngFor="let collection of profileCollection" class="card">
-      <a routerLink="/collections/{{ profileCollection[0].id }}" routerLinkActive="router-link-active"  class="p-2 link-secondary" >
+    <div *ngFor="let collection of allCollections" class="card">
+      <a routerLink="/collections/{{ allCollections[0].id }}" routerLinkActive="router-link-active"  class="p-2 link-secondary" >
         {{ collection.collection_name }}
       </a>
       <div class="nav" >
