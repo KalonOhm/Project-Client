@@ -19,6 +19,7 @@ import { SubgroupsComponent } from './subgroups/subgroups.component';
 import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
 import { MinisComponent } from './minis/minis.component';
 import { MiniDetailsComponent } from './mini-details/mini-details.component';
+import { CreateCollectionComponent } from './shared/modals/create-collection/create-collection.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MiniDetailsComponent } from './mini-details/mini-details.component';
     SubgroupsComponent,
     SubgroupDetailsComponent,
     MinisComponent,
-    MiniDetailsComponent
+    MiniDetailsComponent,
+    CreateCollectionComponent
   ],
   imports: [
     BrowserModule,

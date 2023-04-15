@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
+import { CollectionService } from '../shared/services/collection.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private route: Router,
-    private userService: UserService
+    private userService: UserService,
+    private collectionService: CollectionService
   ) {}
 
   signup(user) {
@@ -39,6 +41,7 @@ export class AuthService {
           if (res.success) {
             // console.log(res.payload.user)
             this.userService.setCurrentUser(res.payload.user);
+            this.collectionService.setCollections(res.payload.user.collections)
             // console.log(res);
             // navigate to home page
             // this.route.navigate(['/home'])

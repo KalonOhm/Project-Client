@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { UserService } from '../user.service';
+import { CollectionService } from 'src/app/shared/services/collection.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private route: Router
+    private route: Router,
+    private collectionService: CollectionService
   ) {}
 
   ngOnInit(): void {}
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
         // console.log(res);
         if (res.success) {
           this.userService.setCurrentUser(res.payload.user);
+          this.collectionService.setCollections(res.payload.user.collections);
           this.route.navigate(['/home']);
           this.authService.setToken(res.payload.token);
           // console.log(res);
