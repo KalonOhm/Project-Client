@@ -3,7 +3,12 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <div routerLink="/collections"> &lt; Back</div>
         <h1>{{ collection.collection_name }}</h1>
+        <div *ngIf="currentUser">
+          <app-edit-collection [collection]="collection"></app-edit-collection>
+          <div class="btn btn-danger" (click)="onDeleteCollection()">Delete Collection</div>
+        </div>
       </div>
         <!-- <div *ngFor="let group of collection.groups"> -->
         <!-- {{ group.group_name }} -->

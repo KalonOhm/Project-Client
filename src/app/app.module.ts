@@ -20,6 +20,7 @@ import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.co
 import { MinisComponent } from './minis/minis.component';
 import { MiniDetailsComponent } from './mini-details/mini-details.component';
 import { CreateCollectionComponent } from './shared/modals/create-collection/create-collection.component';
+import { EditCollectionComponent } from './shared/modals/edit-collection/edit-collection.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CreateCollectionComponent } from './shared/modals/create-collection/cre
     SubgroupDetailsComponent,
     MinisComponent,
     MiniDetailsComponent,
-    CreateCollectionComponent
+    CreateCollectionComponent,
+    EditCollectionComponent
   ],
   imports: [
     BrowserModule,

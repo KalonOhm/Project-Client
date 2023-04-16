@@ -27,7 +27,7 @@ export class CreateCollectionComponent implements OnInit {
       next: (res: any) => {
         this.closeBtn.nativeElement.click();
         window.location.reload()
-        console.log(res);
+        this.collectionService.onAddCollection(res.payload.collection);
       },
       error: (err) => {
         this.errors = err.error.errors;
