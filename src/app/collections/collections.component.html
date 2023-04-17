@@ -1,19 +1,25 @@
-
 <main *ngIf="allCollections">
   <h1>Collections</h1>
   <div>
     <h2>Add a new Collection!</h2>
-  <app-create-collection></app-create-collection>
+    <app-create-collection></app-create-collection>
     <div *ngFor="let collection of allCollections" class="card">
-      <a routerLink="/collections/{{ collection.id }}" routerLinkActive="router-link-active"  class="p-2 link-secondary" >
+      <a
+        routerLink="/collections/{{ collection.id }}"
+        routerLinkActive="router-link-active"
+        class="p-2 link-secondary"
+      >
         {{ collection.collection_name }}
       </a>
-      <div class="nav" >
-      <!-- <div *ngFor="let group of collection.groups"> -->
-        <!-- {{ group.group_name }} -->
-        <span style="margin: 10px;"> Group A </span>
-        <span style="margin: 10px;"> Group B </span>
-        <span style="margin: 10px;"> Group C </span>
+      <div class="nav">
+        <div *ngFor="let group of collection.groups">
+          <a
+            routerLink="/collections/{{ collection.id }}/groups/{{ group.id }}"
+            class="p-2"
+          >
+            {{ group.group_name }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

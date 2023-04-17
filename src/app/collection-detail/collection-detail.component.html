@@ -1,35 +1,28 @@
-
 <main *ngIf="collection">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div routerLink="/collections"> &lt; Back</div>
+        <div routerLink="/collections">&lt; Collections </div>
         <h1>{{ collection.collection_name }}</h1>
         <div *ngIf="currentUser">
           <app-edit-collection [collection]="collection"></app-edit-collection>
-          <div class="btn btn-danger" (click)="onDeleteCollection()">Delete Collection</div>
+          <div class="btn btn-danger" (click)="onDeleteCollection()">
+            Delete Collection
+          </div>
         </div>
       </div>
-        <!-- <div *ngFor="let group of collection.groups"> -->
-        <!-- {{ group.group_name }} -->
-         <!-- <div *ngFor="let subgroup of group.subgroups"> -->
-        <!-- {{ group.subgroup_name }} -->
-      <div>
-        <h3>Group</h3>
-        <spa>
-          Subgroup
-        </spa>
-        <spa>
-          Subgroup
-        </spa>
-        <spa>
-          Subgroup
-        </spa>
-        <spa>
-          Subgroup
-        </spa>
+      <h2>Categories</h2>
+      <button>Add Group</button>
+      <div *ngFor="let group of collection.groups" class="card">
+        <div>
+          <a routerLink="/collections/{{ collection.id }}/groups/{{ group.id }}">
+            {{ group.group_name }}
+          </a>
+          <div *ngFor="let subgroup of group.subgroups">
+            {{ subgroup.subgroup_name }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </main>
-

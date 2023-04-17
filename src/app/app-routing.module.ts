@@ -39,27 +39,27 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path: 'groups',
+    path: 'collections/:collection_id/groups',
     component: GroupsComponent
   },
   {
-    path: 'groups/:id',
+    path: 'collections/:collection_id/groups/:group_id',
     component: GroupDetailsComponent
   },
   {
-    path: 'subgroups',
+    path: 'collections/:collection_id/groups/:group_id/subgroups',
     component: SubgroupsComponent
   },
   {
-    path: 'subgroups/:id',
+    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id',
     component: SubgroupDetailsComponent
   },
   {
-    path: 'minis',
+    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id/minis',
     component: MinisComponent
   },
   {
-    path: 'minis/id',
+    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id/minis/:mini_id',
     component: MiniDetailsComponent
   },
 ];
