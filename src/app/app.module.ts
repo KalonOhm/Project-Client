@@ -13,7 +13,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { CollectionsComponent } from './collections/collections.component';
-import { GroupsComponent } from './groups/groups.component';
+// import { GroupsComponent } from './groups/groups.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
 import { SubgroupsComponent } from './subgroups/subgroups.component';
 import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
@@ -33,7 +33,7 @@ import { EditCollectionComponent } from './shared/modals/edit-collection/edit-co
     ProfileComponent,
     CollectionDetailComponent,
     CollectionsComponent,
-    GroupsComponent,
+    // GroupsComponent,
     GroupDetailsComponent,
     SubgroupsComponent,
     SubgroupDetailsComponent,

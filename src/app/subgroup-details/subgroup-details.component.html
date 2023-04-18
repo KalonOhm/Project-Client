@@ -1,1 +1,4 @@
-<p>subgroup-details works!</p>
+<div>This is the SubgroupDetails Page for {{ subgroup?.subgroup_name }}</div>
+<main *ngIf="subgroup">
+  <p>{{subgroup.subgroup_name}}</p>
+</main>

@@ -1,1 +1,4 @@
-<p>group-details works!</p>
+<div>This is the GroupDetails Page for {{ group?.group_name }}</div>
+<main *ngIf="group">
+  <p>{{group.group_name}}</p>
+</main>

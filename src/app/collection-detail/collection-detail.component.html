@@ -15,7 +15,7 @@
       <button>Add Group</button>
       <div *ngFor="let group of collection.groups" class="card">
         <div>
-          <a routerLink="/collections/{{ collection.id }}/groups/{{ group.id }}">
+          <a routerLink="/collections/{{ collection.id }}/{{ group.id }}">
             {{ group.group_name }}
           </a>
           <div *ngFor="let subgroup of group.subgroups">

@@ -14,7 +14,7 @@
       <div class="nav">
         <div *ngFor="let group of collection.groups">
           <a
-            routerLink="/collections/{{ collection.id }}/groups/{{ group.id }}"
+            routerLink="/collections/{{ collection.id }}/{{ group.id }}"
             class="p-2"
           >
             {{ group.group_name }}

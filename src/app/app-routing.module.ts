@@ -6,7 +6,7 @@ import { CollectionDetailComponent } from './collection-detail/collection-detail
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CollectionsComponent } from './collections/collections.component';
-import { GroupsComponent } from './groups/groups.component';
+// import { GroupsComponent } from './groups/groups.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
 import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
 import { SubgroupsComponent } from './subgroups/subgroups.component';
@@ -38,28 +38,28 @@ const routes: Routes = [
     path: 'profile/:id',
     component: ProfileComponent
   },
+  // {
+  //   path: 'collections/:collection_id/groups',
+  //   component: GroupsComponent
+  // },
   {
-    path: 'collections/:collection_id/groups',
-    component: GroupsComponent
-  },
-  {
-    path: 'collections/:collection_id/groups/:group_id',
+    path: 'collections/:collection_id/:group_id',
     component: GroupDetailsComponent
   },
+  // {
+  //   path: 'collections/:collection_id/groups/:group_id/subgroups',
+  //   component: SubgroupsComponent
+  // },
   {
-    path: 'collections/:collection_id/groups/:group_id/subgroups',
-    component: SubgroupsComponent
-  },
-  {
-    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id',
+    path: 'collections/:collection_id/:group_id/:subgroup_id',
     component: SubgroupDetailsComponent
   },
+  // {
+  //   path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id/minis',
+  //   component: MinisComponent
+  // },
   {
-    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id/minis',
-    component: MinisComponent
-  },
-  {
-    path: 'collections/:collection_id/groups/:group_id/subgroups/:subgroup_id/minis/:mini_id',
+    path: 'collections/:collection_id/:group_id/:subgroup_id/:mini_id',
     component: MiniDetailsComponent
   },
 ];
