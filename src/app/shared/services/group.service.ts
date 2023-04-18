@@ -36,4 +36,53 @@ export class GroupService {
       },
     });
   }
+
+  createGroup(collection_id, group) {
+    const token = JSON.parse(localStorage.getItem('token'));
+    return this.http.post(`${URL}/${collection_id}/groups`, group, {
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
+  }
+
+  setGroups(groups){
+    this.currentGroups = groups;
+    this.currentGroupsSubject.next(groups)
+  }
+
+  onAddGroup(group){
+    this.setGroups([...this.currentGroups, group]);
+  }
+
+  onEditGroup(editedGroup, collection_id, id){
+    const token = JSON.parse(localStorage.getItem('token'));
+    return this.http.put(`${URL}/${collection_id}/${id}`, editedGroup, {
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
+  }
+
+  editGroup(editGroup: any) {
+    this.detailGroupsSubject.next(editGroup);
+    const index = this.currentGroups.findIndex((group: any) => group.id === editGroup.id);
+    this.currentGroups[index] = editGroup;
+    this.setGroups(this.currentGroups);
+    //window.location.reload();
+  }
+
+  deleteGroup(collection_id, id) {
+    const token = JSON.parse(localStorage.getItem('token'));
+    return this.http.delete(`${URL}/${collection_id}/groups/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token.value}`,
+      },
+    });
+  }
+
+
+
+
+
 }

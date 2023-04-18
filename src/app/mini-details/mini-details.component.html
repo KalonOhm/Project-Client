@@ -1,1 +1,4 @@
-<p>mini-details works!</p>
+<div>This is the MiniDetails Page for {{ mini?.mini_name }}</div>
+<main *ngIf="mini">
+  <p>{{mini.mini_name}}</p>
+</main>

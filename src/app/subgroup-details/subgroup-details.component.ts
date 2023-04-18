@@ -22,7 +22,6 @@ export class SubgroupDetailsComponent implements OnInit {
         const collectionId = params.collection_id;
         const groupId = params.group_id;
         const subgroupId = params.subgroup_id;
-        console.log(collectionId);
 
         this.subgroupService
           .fetchSubgroup(collectionId, groupId, subgroupId)
