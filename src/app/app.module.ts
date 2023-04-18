@@ -9,15 +9,11 @@ import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { CollectionsComponent } from './collections/collections.component';
-// import { GroupsComponent } from './groups/groups.component';
 import { GroupDetailsComponent } from './group-details/group-details.component';
-import { SubgroupsComponent } from './subgroups/subgroups.component';
 import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.component';
-import { MinisComponent } from './minis/minis.component';
 import { MiniDetailsComponent } from './mini-details/mini-details.component';
 import { CreateCollectionComponent } from './shared/modals/create-collection/create-collection.component';
 import { EditCollectionComponent } from './shared/modals/edit-collection/edit-collection.component';
@@ -29,15 +25,11 @@ import { EditCollectionComponent } from './shared/modals/edit-collection/edit-co
     NavComponent,
     LoginComponent,
     HomeComponent,
-    SidebarComponent,
     ProfileComponent,
     CollectionDetailComponent,
     CollectionsComponent,
-    // GroupsComponent,
     GroupDetailsComponent,
-    SubgroupsComponent,
     SubgroupDetailsComponent,
-    MinisComponent,
     MiniDetailsComponent,
     CreateCollectionComponent,
     EditCollectionComponent
