@@ -61,6 +61,7 @@ export class MiniService {
   }
 
   onEditMini(editedMini, collection_id, group_id, subgroup_id, id) {
+    console.log("this is onEdit log", editedMini, collection_id, group_id, subgroup_id, id)
     const token = JSON.parse(localStorage.getItem('token'));
     return this.http.put(`${URL}/${collection_id}/groups/${group_id}/subgroups/${subgroup_id}/minis/${id}`, editedMini, {
       headers: {
@@ -74,7 +75,7 @@ export class MiniService {
     const index = this.currentMinis.findIndex((mini: any) => mini.id === editMini.id);
     this.currentMinis[index] = editMini;
     this.setMinis(this.currentMinis);
-    //window.location.reload();
+    window.location.reload();
   }
 
   deleteMini(collection_id, group_id, subgroup_id, id) {

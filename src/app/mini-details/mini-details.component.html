@@ -22,7 +22,6 @@
             style="max-width: 600px; max-height: 600px"
           />
         </div>
-
         <h5>
           Equipment:
           <span>
@@ -45,7 +44,7 @@
         </h5>
 
         <div>
-          <app-edit-subgroup [subgroup]="subgroup"></app-edit-subgroup>
+          <app-edit-mini [mini]="mini" [subgroup]="subgroup" [group]="group" [collection]="collection"></app-edit-mini>
           <div class="btn btn-danger" (click)="onDeleteMini()">Delete</div>
         </div>
       </div>

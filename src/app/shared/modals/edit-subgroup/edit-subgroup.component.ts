@@ -9,7 +9,10 @@ import { SubgroupService } from '../../services/subgroup.service';
 })
 export class EditSubgroupComponent implements OnInit {
   @ViewChild('closeBtn') closeBtn: ElementRef;
+
   @Input() subgroup: any = null;
+  @Input() groupId: any = null;
+  @Input() collectionId: any = null;
 
   subgroupFormGroup: FormGroup;
   errors = [];
@@ -25,7 +28,7 @@ export class EditSubgroupComponent implements OnInit {
   onSubmit() {
     const editedSubgroup = this.subgroupFormGroup.value;
 
-    this.subgroupService.onEditSubgroup(editedSubgroup, this.subgroup.collection_id, this.subgroup.group_id, this.subgroup.id).subscribe({
+    this.subgroupService.onEditSubgroup(editedSubgroup, this.collectionId, this.groupId, this.subgroup.id).subscribe({
       next: (res: any) => {
         this.closeBtn.nativeElement.click();
         this.subgroupService.editSubgroup(res.payload.subgroup);

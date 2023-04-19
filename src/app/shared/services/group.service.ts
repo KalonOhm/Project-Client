@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { CollectionService } from './collection.service';
 
 const URL = 'http://localhost:3000/api/v1/users/collections';
 
@@ -9,7 +8,6 @@ const URL = 'http://localhost:3000/api/v1/users/collections';
   providedIn: 'root',
 })
 export class GroupService {
-  // currentCollectionId: any = null;
   currentGroups: any = [];
   currentGroupsSubject: Subject<any> = new Subject();
   detailGroupsSubject: Subject<any> = new Subject();

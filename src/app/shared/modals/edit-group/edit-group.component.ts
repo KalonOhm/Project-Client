@@ -11,6 +11,7 @@ export class EditGroupComponent implements OnInit {
   @ViewChild('closeBtn') closeBtn: ElementRef;
 
   @Input() group: any = null;
+  @Input() collectionId: any = null;
 
   groupFormGroup: FormGroup;
   errors = [];
@@ -26,7 +27,7 @@ export class EditGroupComponent implements OnInit {
   onSubmit() {
     const editedGroup = this.groupFormGroup.value;
 
-    this.groupService.onEditGroup(editedGroup, this.group.collection_id, this.group.id).subscribe({
+    this.groupService.onEditGroup(editedGroup, this.collectionId, this.group.id).subscribe({
       next: (res: any) => {
         this.closeBtn.nativeElement.click();
         this.groupService.editGroup(res.payload.group);
