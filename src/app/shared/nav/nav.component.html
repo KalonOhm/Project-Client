@@ -1,6 +1,6 @@
 <header class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/collections">Home</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -29,11 +29,11 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            
+
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" *ngIf="currentUser">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="collections">View Paint</a></li>
+            <li><a class="dropdown-item" href="collections">View Paint Schemes</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
           </ul>
