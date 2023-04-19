@@ -25,6 +25,7 @@ export class EditCollectionComponent implements OnInit{
 
   onSubmit() {
     const editedCollection = this.collectionFormGroup.value;
+    
     this.collectionService.onEditCollection(editedCollection, this.collection.id).subscribe({
       next: (res: any) => {
         this.closeBtn.nativeElement.click();

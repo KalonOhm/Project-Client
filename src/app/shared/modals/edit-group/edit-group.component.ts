@@ -9,6 +9,7 @@ import { GroupService } from '../../services/group.service';
 })
 export class EditGroupComponent implements OnInit {
   @ViewChild('closeBtn') closeBtn: ElementRef;
+
   @Input() group: any = null;
 
   groupFormGroup: FormGroup;

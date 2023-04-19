@@ -21,12 +21,14 @@ export class GroupDetailsComponent implements OnInit {
       next: (params) => {
         console.log(params);
         this.collectionId = params.collection_id;
+        console.log(this.collectionId)
         const groupId = params.group_id;
 
         this.groupService.fetchGroup(this.collectionId, groupId).subscribe({
           next: (res: any) => {
             this.group = res.payload.group;
             console.log(this.group);
+            console.log(this.collectionId)
           },
         });
       },

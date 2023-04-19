@@ -15,7 +15,7 @@ export class GroupService {
   detailGroupsSubject: Subject<any> = new Subject();
 
   constructor(
-    private http: HttpClient // private collectionService: CollectionService
+    private http: HttpClient
   ) {}
 
   fetchGroups(collection_id) {
