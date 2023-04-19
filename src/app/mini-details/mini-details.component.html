@@ -1,4 +1,54 @@
-<div>This is the MiniDetails Page for {{ mini?.mini_name }}</div>
 <main *ngIf="mini">
-  <p>{{mini.mini_name}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <span routerLink="/collections">
+          &lt; Home
+        </span>
+        <span routerLink="/collections/{{ collectionId }}">
+          &lt; Collection
+        </span>
+        <span routerLink="/collections/{{ collectionId }}/{{ groupId }}">
+          &lt; Category
+        </span>
+        <span routerLink="/collections/{{ collectionId }}/{{ groupId }}/{{subgroupId}}">
+          &lt; Sub-Category
+        </span>
+        <h1>{{ mini.mini_name }}</h1>
+        <div class="p-4">
+          <img
+            src="{{ mini.image }}"
+            alt=""
+            style="max-width: 600px; max-height: 600px"
+          />
+        </div>
+
+        <h5>
+          Equipment:
+          <span>
+            {{ mini.loadout }}
+          </span>
+        </h5>
+
+        <h5>
+          Quantity:
+          <span>
+            {{ mini.quantity }}
+          </span>
+        </h5>
+
+        <h5>
+          Description:
+          <span>
+            {{ mini.description }}
+          </span>
+        </h5>
+
+        <div>
+          <app-edit-subgroup [subgroup]="subgroup"></app-edit-subgroup>
+          <div class="btn btn-danger" (click)="onDeleteMini()">Delete</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

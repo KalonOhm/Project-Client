@@ -1,4 +1,47 @@
-<div>This is the SubgroupDetails Page for {{ subgroup?.subgroup_name }}</div>
 <main *ngIf="subgroup">
-  <p>{{subgroup.subgroup_name}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <span routerLink="/collections">
+          &lt; Home
+        </span>
+        <span routerLink="/collections/{{ collectionId }}">
+          &lt; Collection
+        </span>
+        <span routerLink="/collections/{{ collectionId }}/{{ groupId }}">
+          &lt; Category
+        </span>
+        <h1>{{ subgroup.subgroup_name }}</h1>
+
+      </div>
+      <h2>Models</h2>
+      <app-create-mini> </app-create-mini>
+      <div class="container w-100">
+        <div class="row">
+          <div
+            *ngFor="let mini of subgroup.minis"
+            class="card col-3"
+            style="height: 16em"
+          >
+            <div style="height: 3em" class="pt-2 p-4">
+              <a routerLink="{{ mini.id }}" class="p-2 link-secondary">
+                {{ mini.mini_name }}
+              </a>
+            </div>
+            <div class="p-4">
+              <img
+                src="{{ mini.image }}"
+                alt=""
+                style="max-width: 200px; max-height: 200px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <app-edit-subgroup [subgroup]="subgroup"></app-edit-subgroup>
+        <div class="btn btn-danger" (click)="onDeleteSubgroup()">Delete</div>
+      </div>
+    </div>
+  </div>
 </main>

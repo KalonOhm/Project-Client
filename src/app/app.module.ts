@@ -17,6 +17,12 @@ import { SubgroupDetailsComponent } from './subgroup-details/subgroup-details.co
 import { MiniDetailsComponent } from './mini-details/mini-details.component';
 import { CreateCollectionComponent } from './shared/modals/create-collection/create-collection.component';
 import { EditCollectionComponent } from './shared/modals/edit-collection/edit-collection.component';
+import { CreateGroupComponent } from './shared/modals/create-group/create-group.component';
+import { EditGroupComponent } from './shared/modals/edit-group/edit-group.component';
+import { CreateSubgroupComponent } from './shared/modals/create-subgroup/create-subgroup.component';
+import { EditSubgroupComponent } from './shared/modals/edit-subgroup/edit-subgroup.component';
+import { CreateMiniComponent } from './shared/modals/create-mini/create-mini.component';
+import { EditMiniComponent } from './shared/modals/edit-mini/edit-mini.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,13 @@ import { EditCollectionComponent } from './shared/modals/edit-collection/edit-co
     SubgroupDetailsComponent,
     MiniDetailsComponent,
     CreateCollectionComponent,
-    EditCollectionComponent
+    EditCollectionComponent,
+    CreateGroupComponent,
+    EditGroupComponent,
+    CreateSubgroupComponent,
+    EditSubgroupComponent,
+    CreateMiniComponent,
+    EditMiniComponent
   ],
   imports: [
     BrowserModule,

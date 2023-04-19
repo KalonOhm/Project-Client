@@ -2,26 +2,38 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div routerLink="/collections">&lt; Collections </div>
+        <div routerLink="/collections">&lt; Home </div>
         <h1>{{ collection.collection_name }}</h1>
-        <div *ngIf="currentUser">
-          <app-edit-collection [collection]="collection"></app-edit-collection>
-          <div class="btn btn-danger" (click)="onDeleteCollection()">
-            Delete Collection
+      </div>
+      <h2>Categories</h2>
+      <app-create-group> </app-create-group>
+      <div
+        *ngFor="let group of collection.groups"
+        class="card mt-3"
+        style="height: 4em"
+      >
+        <a
+          routerLink="/collections/{{ collection.id }}/{{ group.id }}"
+          class="p-2 link-secondary"
+        >
+          {{ group.group_name }}
+        </a>
+        <div class="nav">
+          <div *ngFor="let subgroup of group.subgroups">
+            <a
+              routerLink="/collections/{{ collection.id }}/{{ group.id }}/{{
+                subgroup.id
+              }}"
+              class="p-2"
+            >
+              {{ subgroup.subgroup_name }}
+            </a>
           </div>
         </div>
       </div>
-      <h2>Categories</h2>
-      <button>Add Group</button>
-      <div *ngFor="let group of collection.groups" class="card">
-        <div>
-          <a routerLink="/collections/{{ collection.id }}/{{ group.id }}">
-            {{ group.group_name }}
-          </a>
-          <div *ngFor="let subgroup of group.subgroups">
-            {{ subgroup.subgroup_name }}
-          </div>
-        </div>
+      <div class="mt-3">
+        <app-edit-collection [collection]="collection"></app-edit-collection>
+        <div class="btn btn-danger" (click)="onDeleteCollection()">Delete</div>
       </div>
     </div>
   </div>

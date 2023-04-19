@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         if (res.success) {
           this.userService.setCurrentUser(res.payload.user);
           this.collectionService.setCollections(res.payload.user.collections);
-          this.route.navigate(['/home']);
+          this.route.navigate(['/collections']);
           this.authService.setToken(res.payload.token);
           // console.log(res);
         }

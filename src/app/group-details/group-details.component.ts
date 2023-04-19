@@ -11,25 +11,34 @@ import { GroupService } from '../shared/services/group.service';
 })
 export class GroupDetailsComponent implements OnInit {
   group: any = null;
+  collectionId: any = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private groupService: GroupService
+    private groupService: GroupService,
+    private route: Router
   ) {}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
       next: (params) => {
         console.log(params);
-        const collectionId = params.collection_id;
+        this.collectionId = params.collection_id;
         const groupId = params.group_id;
-        console.log(collectionId);
 
-        this.groupService.fetchGroup(collectionId, groupId).subscribe({
+        this.groupService.fetchGroup(this.collectionId, groupId).subscribe({
           next: (res: any) => {
             this.group = res.payload.group;
             console.log(this.group);
           },
         });
+      },
+    });
+  }
+
+  onDeleteGroup() {
+    this.groupService.deleteGroup(this.collectionId, this.group.id).subscribe({
+      next: (res: any) => {
+        this.route.navigate(['/collections', this.collectionId]);
       },
     });
   }

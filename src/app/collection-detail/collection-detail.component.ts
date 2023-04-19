@@ -9,8 +9,6 @@ import { UserService } from '../auth/user.service';
   styleUrls: ['./collection-detail.component.css'],
 })
 export class CollectionDetailComponent implements OnInit {
-
-
   collection: any = null;
   currentUser: any = null;
 
@@ -21,23 +19,23 @@ export class CollectionDetailComponent implements OnInit {
     private route: Router
   ) {}
   ngOnInit(): void {
-
     this.collectionService.detailCollectionSubject.subscribe({
-      next: (editedCollection:any) => {
-        this.collection = editedCollection
-      }
-    })
+      next: (editedCollection: any) => {
+        this.collection = editedCollection;
+      },
+    });
     this.userService.currentUserSubject.subscribe({
-      next: (currentUser:any) => {
+      next: (currentUser: any) => {
         this.currentUser = currentUser;
-      }
-    })
+      },
+    });
 
     this.activatedRoute.params.subscribe({
       next: (params) => {
         const collectionId = params.id;
         this.collectionService.fetchCollection(collectionId).subscribe({
           next: (res: any) => {
+            console.log(res);
             this.collection = res.payload.collection;
           },
         });
@@ -49,7 +47,7 @@ export class CollectionDetailComponent implements OnInit {
     this.collectionService.deleteCollection(this.collection.id).subscribe({
       next: (res: any) => {
         this.route.navigate(['/collections']);
-      }
-    })
+      },
+    });
   }
 }

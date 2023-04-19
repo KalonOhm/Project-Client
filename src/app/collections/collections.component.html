@@ -3,10 +3,9 @@
   <div>
     <h2>Add a new Collection!</h2>
     <app-create-collection></app-create-collection>
-    <div *ngFor="let collection of allCollections" class="card">
+    <div *ngFor="let collection of allCollections" class="card mt-3" style="height: 4em;">
       <a
         routerLink="/collections/{{ collection.id }}"
-        routerLinkActive="router-link-active"
         class="p-2 link-secondary"
       >
         {{ collection.collection_name }}
