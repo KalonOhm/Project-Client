@@ -53,6 +53,7 @@ export class SubgroupService {
   }
 
   onEditSubgroup(editedSubgroup, collection_id, group_id, id){
+    console.log(editedSubgroup, collection_id, group_id, id)
     const token = JSON.parse(localStorage.getItem('token'));
     return this.http.put(`${URL}/${collection_id}/groups/${group_id}/subgroups/${id}`, editedSubgroup, {
       headers: {
@@ -66,7 +67,7 @@ export class SubgroupService {
     const index = this.currentSubgroups.findIndex((subgroup: any) => subgroup.id === editSubgroup.id);
     this.currentSubgroups[index] = editSubgroup;
     this.setSubgroups(this.currentSubgroups);
-    //window.location.reload();
+    window.location.reload();
   }
 
   deleteSubgroup(collection_id, group_id, id) {

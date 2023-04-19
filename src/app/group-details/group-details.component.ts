@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CollectionService } from '../shared/services/collection.service';
-import { UserService } from '../auth/user.service';
 import { GroupService } from '../shared/services/group.service';
 
 @Component({
