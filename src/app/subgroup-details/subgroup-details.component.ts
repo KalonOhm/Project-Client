@@ -51,5 +51,4 @@ export class SubgroupDetailsComponent implements OnInit {
         },
       });
   }
-
 }
