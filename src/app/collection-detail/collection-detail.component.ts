@@ -37,6 +37,7 @@ export class CollectionDetailComponent implements OnInit {
           next: (res: any) => {
             console.log(res);
             this.collection = res.payload.collection;
+            console.log(this.collection)
           },
         });
       },

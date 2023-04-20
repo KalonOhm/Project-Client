@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class CreateGroupComponent implements OnInit {
   @ViewChild('closeBtn') closeBtn: ElementRef;
 
-  @Input() collectionId: any = null;
+  @Input() collection: any = null;
 
   errors = [];
 
@@ -25,11 +25,11 @@ export class CreateGroupComponent implements OnInit {
   onSubmit() {
     const newGroup = this.groupFormGroup.value;
 
-    this.groupService.createGroup(this.collectionId, newGroup).subscribe({
+    this.groupService.createGroup(this.collection.id, newGroup).subscribe({
       next: (res: any) => {
         this.closeBtn.nativeElement.click();
-        window.location.reload();
         this.groupService.onAddGroup(res.payload.group);
+        window.location.reload();
       },
       error: (err) => {
         this.errors = err.error.errors;

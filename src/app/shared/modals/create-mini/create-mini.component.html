@@ -1,1 +1,82 @@
-<p>create-mini works!</p>
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#create-mini"
+>
+  Add Model
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="create-mini"
+  tabindex="-1"
+  aria-labelledby="create-miniLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="create-miniLabel">New Model</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" role="alert" *ngFor="let error of errors">
+          {{error}}
+        </div>
+        <form [formGroup]="miniFormGroup" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="mini_name"
+            />
+            <label class="form-label">Image URL</label>
+            <!-- TODO: Add image upload -->
+            <input
+              type="text"
+              class="form-control"
+              formControlName="image"
+            />
+            <label class="form-label">Equipment</label>
+            <!-- TODO: allow array of multiple items -->
+            <input
+              type="text-area"
+              class="form-control"
+              formControlName="loadout"
+            />
+            <label class="form-label">Quantity</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="quantity"
+            />
+            <label class="form-label">Details</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="description"
+            />
+
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeBtn>
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

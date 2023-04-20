@@ -6,7 +6,7 @@
         <h1>{{ collection.collection_name }}</h1>
       </div>
       <h2>Categories</h2>
-      <app-create-group [collectionId]="collectionId"> </app-create-group>
+      <app-create-group [collection]="collection"> </app-create-group>
       <div
         *ngFor="let group of collection.groups"
         class="card mt-3"
