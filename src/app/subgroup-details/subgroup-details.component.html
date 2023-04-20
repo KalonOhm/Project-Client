@@ -21,9 +21,9 @@
           <div
             *ngFor="let mini of subgroup.minis"
             class="card col-3"
-            style="height: 16em"
+            style="min-height: 16em"
           >
-            <div style="height: 3em" class="pt-2 p-4">
+            <div style="min-height: 3em" class="pt-2 p-4">
               <a routerLink="{{ mini.id }}" class="p-2 link-secondary">
                 {{ mini.mini_name }}
               </a>
